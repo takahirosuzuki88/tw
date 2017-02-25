@@ -7,11 +7,17 @@
 
     <% @tweets.each do |tweet| %>
     <div class="row">
-      <p>本文:<%= tweet.content %></p>
-      
-      
+      <div class="tws">
+　      <img src="<%= asset_path "170224(micky.jpg" %>">
+　      <br>
+　      <br>
+           <div class="bubble">
+             <div class="tail"></div>
+             <p class="body"><%= tweet.content %></p>
+           </div>
       <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success', data: { confirm: '本当に編集していいですか？' } %>
       <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-default btn-sm btn btn-danger' %>
+      </div>
     </div>
     <% end %>
   </div>
